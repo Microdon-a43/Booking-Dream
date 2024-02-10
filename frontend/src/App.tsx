@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './layouts/Layout';
+import { Login, Register } from './pages';
 
 function App() {
   return (
@@ -17,7 +18,23 @@ function App() {
           path="/sign-in"
           element={
             <Layout>
-              <p>Login Page</p>
+              <p>Search Page</p>
+            </Layout>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Layout>
+              <Register />
+            </Layout>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Layout>
+              <Login />
             </Layout>
           }
         />

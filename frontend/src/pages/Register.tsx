@@ -1,11 +1,13 @@
+import { useMutation } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
+import * as apiClient from '../api-client';
 
-type RegisterFormData = {
+export type RegisterFormData = {
   firstName: string;
   email: string;
   lastName: string;
   password: string;
-  cf_password: string;
+  cf_password?: string;
 };
 
 export const Register = () => {
@@ -16,8 +18,19 @@ export const Register = () => {
     formState: { errors }
   } = useForm<RegisterFormData>();
 
+  const mutation = useMutation({
+    mutationFn: apiClient.registerForm,
+    onSuccess: () => {
+      console.log('Success');
+    },
+    onError: (err: Error) => {
+      console.log(err.message);
+    }
+  });
+
   const onSubmit = (data: RegisterFormData): void => {
-    console.log(data);
+    delete data.cf_password;
+    mutation.mutate(data);
   };
   return (
     <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>

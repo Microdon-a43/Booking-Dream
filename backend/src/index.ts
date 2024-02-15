@@ -18,10 +18,7 @@ app.use(morgan('dev'));
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 
-mongoose
-  .connect(DB as string)
-  .then(() => console.log('DB connected'))
-  .catch((err) => console.log(err));
+mongoose.connect(DB as string);
 
 app.listen(PORT, () => {
   console.log('Server is up on port - ', PORT);

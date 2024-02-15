@@ -25,7 +25,6 @@ router.post(
       if (user) return res.status(400).json({ message: 'User already exists' });
 
       user = new User(req.body);
-      console.log(user);
       await user.save();
 
       const token = jwt.sign(

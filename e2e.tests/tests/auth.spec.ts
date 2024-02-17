@@ -18,6 +18,9 @@ test('should allow the user to log in', async ({ page }) => {
 });
 
 test('should allow user to register', async ({ page }) => {
+  const testEmail = `test_register_${
+    Math.floor(Math.random() * 90000) + 10000
+  }@test.com`;
   await page.goto(UI_URL);
   await page.getByRole('link', { name: 'Sign In' }).click();
   await page.getByRole('link', { name: 'Create an account here' }).click();
@@ -26,7 +29,7 @@ test('should allow user to register', async ({ page }) => {
   ).toBeVisible();
   await page.locator('[name=firstName]').fill('test_firstName');
   await page.locator('[name=lastName]').fill('test_lastName');
-  await page.locator('[name=email]').fill('test_email@mail');
+  await page.locator('[name=email]').fill(testEmail);
   await page.locator('[name=password]').fill('111111');
   await page.locator('[name=cf_password]').fill('111111');
   await page.getByRole('button', { name: 'Create Account' }).click();

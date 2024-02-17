@@ -19,7 +19,7 @@ export const Login = () => {
     formState: { errors }
   } = useForm<LoginFormData>();
 
-  const { error, mutate } = useMutation({
+  const { mutate } = useMutation({
     mutationFn: login,
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ['validateToken'] });
@@ -70,9 +70,12 @@ export const Login = () => {
           <span className="text-red-500">{errors.password.message}</span>
         )}
       </label>
-      <span className='flex items-center justify-between'>
+      <span className="flex items-center justify-between">
         <span className="text-sm ">
-          Not registered? <Link className='underline' to="/register">Create an account here</Link>
+          Not registered?{' '}
+          <Link className="underline" to="/register">
+            Create an account here
+          </Link>
         </span>
         <button
           type="submit"

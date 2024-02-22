@@ -6,5 +6,6 @@ import { hotelValidation } from '../validations/hotel';
 const router = express.Router();
 
 router.post('/', verifyToken, hotelValidation, hotelCtrl.create);
+router.get('/', verifyToken, hotelCtrl.getAll);
 
 export default router;

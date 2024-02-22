@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useAppContext } from './contexts/AppContext';
 import { Layout } from './layouts/Layout';
 import { AddHotel, Login, Register } from './pages';
+import { MyHotels } from './pages/MyHotels';
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -48,6 +49,14 @@ function App() {
               element={
                 <Layout>
                   <AddHotel />
+                </Layout>
+              }
+            />
+            <Route
+              path="/my-hotels"
+              element={
+                <Layout>
+                  <MyHotels />
                 </Layout>
               }
             />

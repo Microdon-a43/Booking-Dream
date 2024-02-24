@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import cloudinary from 'cloudinary';
-import Hotel, { HotelType } from '../models/hotel';
+import Hotel from '../models/hotel';
 import { validationResult } from 'express-validator';
+import { HotelType } from '../shared/types';
 
 export const hotelCtrl = {
   create: async (req: Request, res: Response) => {

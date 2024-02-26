@@ -7,5 +7,7 @@ const router = express.Router();
 
 router.post('/', verifyToken, hotelValidation, hotelCtrl.create);
 router.get('/', verifyToken, hotelCtrl.getAll);
+router.get('/:id', verifyToken, hotelCtrl.editHotel);
+router.put('/:hotelId', verifyToken, hotelCtrl.updateHotel);
 
 export default router;

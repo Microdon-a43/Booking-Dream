@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useAppContext } from './contexts/AppContext';
 import { Layout } from './layouts/Layout';
-import { AddHotel, Login, Register } from './pages';
+import { AddHotel, EditHotel, Login, Register } from './pages';
 import { MyHotels } from './pages/MyHotels';
 
 function App() {
@@ -57,6 +57,14 @@ function App() {
               element={
                 <Layout>
                   <MyHotels />
+                </Layout>
+              }
+            />
+            <Route
+              path="/edit-hotel/:hotelId"
+              element={
+                <Layout>
+                  <EditHotel />
                 </Layout>
               }
             />

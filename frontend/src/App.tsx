@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useAppContext } from './contexts/AppContext';
 import { Layout } from './layouts/Layout';
-import { AddHotel, EditHotel, Login, Register } from './pages';
+import { AddHotel, EditHotel, Login, Register, Search } from './pages';
 import { MyHotels } from './pages/MyHotels';
 
 function App() {
@@ -18,10 +18,10 @@ function App() {
           }
         />
         <Route
-          path="/sign-in"
+          path="/search"
           element={
             <Layout>
-              <p>Search Page</p>
+              <Search />
             </Layout>
           }
         />

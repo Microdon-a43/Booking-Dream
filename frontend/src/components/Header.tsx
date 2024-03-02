@@ -4,7 +4,6 @@ import { LogOutBtn } from './LogOutBtn';
 
 export const Header = () => {
   const { isLoggedIn } = useAppContext();
-  console.log(isLoggedIn);
 
   return (
     <header className="bg-blue-800 py-6">
@@ -21,7 +20,12 @@ export const Header = () => {
               >
                 My Bookings
               </Link>
-              <Link className="flex items-center text-white px-3 font-bold hover:bg-blue-600" to="/my-hotels">My Hotels</Link>
+              <Link
+                className="flex items-center text-white px-3 font-bold hover:bg-blue-600"
+                to="/my-hotels"
+              >
+                My Hotels
+              </Link>
               <LogOutBtn />
             </div>
           ) : (

@@ -1,4 +1,4 @@
-import { Footer, Header, Hero } from '../components';
+import { Footer, Header, Hero, SearchBar } from '../components';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,6 +9,9 @@ export const Layout = ({ children }: LayoutProps) => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
+      <div className="container mx-auto">
+        <SearchBar />
+      </div>
       <div className="container mx-auto py-10 flex-1">{children}</div>
       <Footer />
     </div>

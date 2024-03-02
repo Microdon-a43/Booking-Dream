@@ -4,7 +4,7 @@ import Hotel from '../models/hotel';
 import { validationResult } from 'express-validator';
 import { HotelType } from '../shared/types';
 
-export const hotelCtrl = {
+export const myHotelCtrl = {
   create: async (req: Request, res: Response) => {
     try {
       const errors = validationResult(req);

@@ -1,7 +1,7 @@
-import { HotelType } from '../../../backend/src/models/hotel';
+import { HotelType } from '../../../backend/src/shared/types';
+import { Link } from 'react-router-dom';
 import { BsBuilding, BsMap } from 'react-icons/bs';
 import { BiHotel, BiMoney, BiStar } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
 
 interface HotelCardProps {
   hotel: HotelType;
@@ -34,7 +34,12 @@ export const HotelCard = ({ hotel }: HotelCardProps) => {
         </div>
       </div>
       <span className="flex justify-end">
-        <Link to={`/edit-hotel/${hotel._id}`} className="flex bg-blue-600 text-white text-xl font-bold p-2 hover:bg-blue-500 ">View Details</Link>
+        <Link
+          to={`/edit-hotel/${hotel._id}`}
+          className="flex bg-blue-600 text-white text-xl font-bold p-2 hover:bg-blue-500 "
+        >
+          View Details
+        </Link>
       </span>
     </div>
   );

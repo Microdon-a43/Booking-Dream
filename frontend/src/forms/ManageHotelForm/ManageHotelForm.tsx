@@ -60,10 +60,10 @@ export const ManageHotelForm = ({
       formData.append(`facilities[${index}]`, facility);
     });
 
-    if(formDataJson.imgUrls) {
+    if (formDataJson.imgUrls) {
       formDataJson.imgUrls.forEach((url, i) => {
-        formData.append(`imgUrls[${i}]`, url)
-      })
+        formData.append(`imgUrls[${i}]`, url);
+      });
     }
 
     Array.from(formDataJson.imgFiles).forEach((imgFile) => {

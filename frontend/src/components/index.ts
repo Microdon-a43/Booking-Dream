@@ -5,3 +5,8 @@ export { Toast } from './Toast';
 export { LogOutBtn } from './LogOutBtn';
 export { SearchBar } from './SearchBar';
 export { SearchedHotelCard } from './SearchedHotelCard';
+export { StarRatingFilter } from './StarRatingFilter';
+export { HotelTypesFilter } from './HotelTypesFilter';
+export { FacilitiesFilter } from './FacilitiesFilter';
+export { PriceFilter } from './PriceFilter';
+export { Pagination } from './Pagination';
